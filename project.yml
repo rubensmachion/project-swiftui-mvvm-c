@@ -1,15 +1,14 @@
-# Project Template sample
+# ${PROJECT_NAME}
 #
 # Doc: https://github.com/yonaskolb/XcodeGen
 #
 
-name: ProjectTemplate
+name: ${PROJECT_NAME}
 
 options:
   developmentLanguage: pt-BR
-
   deploymentTarget:
-    iOS: 16.0
+    iOS: '16.0'
 
 localPackages:
   - Packages/AppNavigationKit
@@ -17,8 +16,8 @@ localPackages:
   - Packages/NetworkKit
 
 # packages:
-#   SamplePackagenName:
-#     url: https://github.com/SamplePackagenName
+#   SamplePackageName:
+#     url: https://github.com/SamplePackageName
 #     exactVersion: X.X.X
 
 configs:
@@ -26,35 +25,36 @@ configs:
   Production: release
 
 targets:
-
   ####################
   # Main app
   ####################
-  ProjectTemplate:
+  ${PROJECT_NAME}:
     type: application
     platform: iOS
     configFiles:
       Development: Config/dev.xcconfig
       Production: Config/prd.xcconfig
     settings:
-      ASSETCATALOG_COMPILER_APPICON_NAME: $(APP_ICON)
-      PRODUCT_NAME: $(PRODUCT_NAME)
-      ONLY_ACTIVE_ARCH: YES
-      DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
-      CODE_SIGN_IDENTITY: iPhone Distribution
-      CODE_SIGN_STYLE: Manual
-      PROVISIONING_PROFILE_SPECIFIER: $(PROVISIONING_PROFILE_SPECIFIER)
-      SWIFT_VERSION: $(SWIFT_VERSION)
-      DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
-      CURRENT_PROJECT_VERSION: $(CURRENT_PROJECT_VERSION)
-      OTHER_LDFLAGS: ["$(inherited)", -ObjC]
-      FRAMEWORK_SEARCH_PATHS: ["$(inherited)", "$(PROJECT_DIR)"]
-    sources: [ProjectTemplate]
-    resources: [ProjectTemplate/Application/Resources]
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: $(APP_ICON)
+        PRODUCT_NAME: ${PROJECT_NAME}
+        ONLY_ACTIVE_ARCH: YES
+        DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
+        CODE_SIGN_IDENTITY: "iPhone Distribution"
+        CODE_SIGN_STYLE: Manual
+        PROVISIONING_PROFILE_SPECIFIER: $(PROVISIONING_PROFILE_SPECIFIER)
+        SWIFT_VERSION: $(SWIFT_VERSION)
+        DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+        CURRENT_PROJECT_VERSION: $(CURRENT_PROJECT_VERSION)
+        OTHER_LDFLAGS: ["$(inherited)", "-ObjC"]
+        FRAMEWORK_SEARCH_PATHS: ["$(inherited)", "$(PROJECT_DIR)"]
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_IDENTIFIER)
+    sources: 
+      - ${PROJECT_NAME}
+    resources: 
+      - ${PROJECT_NAME}/Application/Resources
 
-    # ##############################
     # InfoPlist Configurations
-    # ##############################
     info:
       path: Config/Info.plist
       properties:
@@ -64,32 +64,37 @@ targets:
         CFBundleDisplayName: $(APP_DISPLAY_NAME)
         ITSAppUsesNonExemptEncryption: NO
         UIStatusBarStyle: UIStatusBarStyleLightContent
-        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
-        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
         UILaunchStoryboardName: LaunchScreen
-        UIRequiredDeviceCapabilities: [armv7]
+        UIRequiredDeviceCapabilities:
+          - armv7
         ENVIRONMENT: $(ENVIRONMENT)
-        UIBackgroundModes: [fetch]
     entitlements:
-      path: Config/ProjectTemplate.entitlements
+      path: Config/${PROJECT_NAME}.entitlements
       properties:
-        com.apple.security.application-groups: [
-          "group.com.appgroup.sample.ProjectTemplate"
-        ]
+        com.apple.security.application-groups:
+          - group.com.appgroup.sample.${PROJECT_NAME}
     dependencies:
       - package: AppNavigationKit
       - package: UtilKit
       - package: NetworkKit
 
-
 schemes:
-  ProjectTemplate:
+  ${PROJECT_NAME}:
     run:
       config: Development
     archive:
-      config: Development
+      config: Production
     build:
       targets:
-        ProjectTemplate: all
+        ${PROJECT_NAME}: all
       parallelizeBuild: true
       buildImplicitDependencies: true

@@ -25,7 +25,3 @@ public struct AppCoordinatorView: View {
         .environmentObject(appCoordinator)
     }
 }
-
-//#Preview {
-//    AppCoordinatorView(startOn: HomeRoute.start)
-//}

@@ -2,9 +2,8 @@ SWIFT_VERSION = 5.0
 DEVELOPMENT_TEAM = XXXXXXXX
 ENVIRONMENT = Prod
 
-PRODUCT_NAME = ProjectTemplate
-BUNDLE_IDENTIFIER = com.appgroup.sample.ProjectTemplate
+BUNDLE_IDENTIFIER = com.appgroup.sample
 MARKETING_VERSION = 1.0.0
 CURRENT_PROJECT_VERSION = 1
-PROVISIONING_PROFILE_SPECIFIER_SDK_CORE = match AppStore com.appgroup.sample.ProjectTemplate
+PROVISIONING_PROFILE_SPECIFIER_SDK_CORE = match AppStore com.appgroup.sample
 APP_ICON = AppIcon
