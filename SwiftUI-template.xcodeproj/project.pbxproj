@@ -37,6 +37,7 @@
 		77241B8D2C908FFD00FC25FB /* SettingDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77241B872C908FFD00FC25FB /* SettingDetailBuilder.swift */; };
 		77241B8E2C908FFD00FC25FB /* SettingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77241B882C908FFD00FC25FB /* SettingDetailViewModel.swift */; };
 		77241B8F2C908FFD00FC25FB /* SettingDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77241B892C908FFD00FC25FB /* SettingDetailService.swift */; };
+		77C1F91F2CE4D5A200851095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C1F91E2CE4D5A200851095 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		77241B872C908FFD00FC25FB /* SettingDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailBuilder.swift; sourceTree = "<group>"; };
 		77241B882C908FFD00FC25FB /* SettingDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailViewModel.swift; sourceTree = "<group>"; };
 		77241B892C908FFD00FC25FB /* SettingDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailService.swift; sourceTree = "<group>"; };
+		77C1F91E2CE4D5A200851095 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,8 @@
 		77241B1D2C90791100FC25FB = {
 			isa = PBXGroup;
 			children = (
+				77C1F91C2CE4CF6700851095 /* Config */,
+				77C1F9182CE4CEB200851095 /* Packages */,
 				77241B282C90791100FC25FB /* SwiftUI-template */,
 				77241B3A2C90791200FC25FB /* SwiftUI-templateTests */,
 				77241B442C90791200FC25FB /* SwiftUI-templateUITests */,
@@ -143,8 +147,6 @@
 			children = (
 				77241B622C907B5800FC25FB /* Modules */,
 				77241B542C9079D900FC25FB /* Application */,
-				77241B2D2C90791200FC25FB /* Assets.xcassets */,
-				77241B2F2C90791200FC25FB /* SwiftUI_template.entitlements */,
 				77241B302C90791200FC25FB /* Preview Content */,
 			);
 			path = "SwiftUI-template";
@@ -178,6 +180,7 @@
 		77241B542C9079D900FC25FB /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				77C1F91D2CE4D00D00851095 /* Resources */,
 				77241B572C907A0700FC25FB /* AppCoordinator */,
 				77241B292C90791100FC25FB /* SwiftUI_templateApp.swift */,
 				77241B602C907B0B00FC25FB /* AppDelegate.swift */,
@@ -244,6 +247,30 @@
 				77241B892C908FFD00FC25FB /* SettingDetailService.swift */,
 			);
 			path = SettingDetail;
+			sourceTree = "<group>";
+		};
+		77C1F9182CE4CEB200851095 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		77C1F91C2CE4CF6700851095 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				77241B2F2C90791200FC25FB /* SwiftUI_template.entitlements */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		77C1F91D2CE4D00D00851095 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77241B2D2C90791200FC25FB /* Assets.xcassets */,
+				77C1F91E2CE4D5A200851095 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C1F91F2CE4D5A200851095 /* LaunchScreen.storyboard in Resources */,
 				77241B322C90791200FC25FB /* Preview Assets.xcassets in Resources */,
 				77241B2E2C90791200FC25FB /* Assets.xcassets in Resources */,
 			);
@@ -556,7 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "SwiftUI-template/SwiftUI_template.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Config/SwiftUI_template.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-template/Preview Content\"";
@@ -568,14 +596,15 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "opensource.SwiftUI-template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -592,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "SwiftUI-template/SwiftUI_template.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Config/SwiftUI_template.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-template/Preview Content\"";
@@ -604,14 +633,15 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "opensource.SwiftUI-template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
